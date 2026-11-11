@@ -70,7 +70,7 @@ def redirect_ercdn():
         return redirect(ercdn_url)
     return abort(404, description="Ercdn yayın linki bulunamadı.")
 
-@app.route('stream/nowtvdai.m3u8')
+@app.route('/stream/nowtvdai.m3u8')
 def redirect_daion():
     _, daion_url = get_stream_links()
     if daion_url:
