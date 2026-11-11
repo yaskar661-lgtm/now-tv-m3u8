@@ -63,14 +63,14 @@ def get_stream_links():
         
     return None, None
 
-@app.route('/nowtv')
+@app.route('/stream/nowtv.m3u8')
 def redirect_ercdn():
     ercdn_url, _ = get_stream_links()
     if ercdn_url:
         return redirect(ercdn_url)
     return abort(404, description="Ercdn yayın linki bulunamadı.")
 
-@app.route('/nowtvdai')
+@app.route('stream/nowtvdai.m3u8')
 def redirect_daion():
     _, daion_url = get_stream_links()
     if daion_url:
